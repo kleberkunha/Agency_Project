@@ -1,24 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
-
+//import React, { useState } from 'react';
+import {BrowserRouter} from 'react-router-dom';
+import Routes from './Routes';
+//import { ThemeProvider, createGlobalStyle } from 'styled-components';
+import { Template } from './components/MainComponents';
+import Header from './components/partials/Header';
+import Footer from './components/partials/Footer';
+/*
+const GlobalStyle = createGlobalStyle`
+  body{
+    background-Color: ${props => props.theme.mode === 'dark' ? '#111' : '#EEE'};
+    color: ${props => props.theme.mode === 'dark' ? '#EEE' : '#111'};
+  }
+`;
+*/
 function App() {
+
+  //const [theme, setTheme] = useState({ mode: 'light'})
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <BrowserRouter>
+        <Template>
+        
+          <Header/>
+
+          <Routes/>
+
+          <Footer/>
+        </Template>
+      </BrowserRouter>
   );
 }
 
